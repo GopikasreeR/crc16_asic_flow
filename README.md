@@ -8,7 +8,7 @@ RTL-to-GDSII physical design flow for a CRC-16/CCITT checker (`crc16_checker`), 
 - **Place, route, CTS, and timing:** Cadence Innovus 21.15
 - **Equivalence checking:** Cadence Conformal LEC
 - **Target clock:** 100 MHz (10 ns period)
-- **Technology / library:** <PDK / standard-cell library>
+- **Technology / library:** `<PDK / standard-cell library>`
 
 ## Flow
 1. RTL design and self-checking simulation (`rtl/`, `tb/`)
@@ -30,7 +30,29 @@ RTL-to-GDSII physical design flow for a CRC-16/CCITT checker (`crc16_checker`), 
 | Total power (simulation activity) | 114.1 µW |
 | Equivalence check | 70 of 70 compare points equivalent (PASS) |
 
-The setup slack and hold slack come from the post-CTS Innovus reports. The area and cell count come from the Genus synthesis report, so the post-route area may differ. Power is taken from the power report that uses simulation activity (VCD). A vectorless estimate from the same synthesized netlist gives 143.8 µW.
+The setup and hold slack come from the post-CTS Innovus reports. The area and cell count come from the Genus synthesis report, so the post-route area may differ. Power comes from the report that uses simulation activity (VCD). A vectorless estimate from the same synthesized netlist gives 143.8 µW.
+
+## Screenshots
+
+### Simulation
+![SimVision waveform](docs/screenshots/10_simvision_waveform.png)
+
+### Synthesis (Genus)
+![Genus timing report](docs/screenshots/03_genus_timing_report.png)
+![Genus gate count](docs/screenshots/04_genus_gate_count.png)
+![Genus power report](docs/screenshots/05_genus_power_report.png)
+
+### Place and Route (Innovus)
+![Innovus final layout](docs/screenshots/01_innovus_final_layout.png)
+![Innovus streamout log](docs/screenshots/02_innovus_streamout_log.png)
+
+### Timing Closure
+![Post-CTS setup report](docs/screenshots/07_postcts_setup_report.png)
+![Post-CTS hold report](docs/screenshots/06_postcts_hold_report.png)
+![Innovus timing debug](docs/screenshots/09_innovus_timing_debug.png)
+
+### Equivalence Check (Conformal LEC)
+![Conformal LEC pass](docs/screenshots/08_conformal_lec_pass.png)
 
 ## Repository Structure
 - `rtl/` RTL source (`crc.v`, module `crc16_checker`)
