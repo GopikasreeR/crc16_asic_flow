@@ -8,7 +8,7 @@ RTL-to-GDSII physical design flow for a CRC-16/CCITT checker (`crc16_checker`), 
 - **Place, route, CTS, and timing:** Cadence Innovus 21.15
 - **Equivalence checking:** Cadence Conformal LEC
 - **Target clock:** 100 MHz (10 ns period)
-- **Technology / library:** `<PDK / standard-cell library>`
+- **Technology / library:** 90 nm
 
 ## Flow
 1. RTL design and self-checking simulation (`rtl/`, `tb/`)
