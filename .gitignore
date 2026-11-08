@@ -1,0 +1,24 @@
+# Cadence / EDA run artifacts
+*.log
+*.cmd
+*.jou
+*.rpt.gz
+*.db
+*.gds
+*.oa
+*.lib.gz
+INCA_libs/
+worklib/
+cds.lib
+hdl.var
+.cadence/
+.simvision/
+*.shm/
+*.vcd
+*.fsdb
+
+# Python and OS junk
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
